@@ -1,0 +1,84 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+<div class="mt">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="touch">
+        <div class="card">
+          <br>
+          <h5 class="text-center">สภาพอากาศวันนี้</h5>
+          <div class="pl-5">
+            <p>City : <b>{{weather.city}}, {{weather.country}}</b></p>
+            <p>สภาพอากาศ : {{weather.description}} | {{weather.temperature}} &#8451 <img src="{{weather.url}}"></img>
+            </p>
+            <p>ความเร็วลม : {{weather.wind}}</p>
+            <p>ความชื้น : {{weather.humidity}}</p>
+            <p>ความกดอากาศ : {{weather.pressure}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="touch">
+        <div class="card">
+          <br>
+          <h5 class="text-center">ตรวจสอบสภาพอากาศของคุณ</h5>
+          <div class="col-sm">
+            <div class="form-outline">
+              <form>
+                <label class="form-label" for="form10Example2">Country</label>
+                <input type="text" name="city" class="form-control" />
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="touch">
+        <div class="card">
+          <br>
+          <h5 class="text-center">Update COVID-19 THAILAND</h5>
+          <div class="pl-5">
+            <p>CASE รวม : <b>{{result.Confirmed}}</b></p>
+            <p>รักษาหายแล้ว : {{result.Recovered}} </p>
+            <p>กำลังรักษา : {{result.Hospitalized}}</p>
+            <p>ตาย : {{result.Deaths}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="touch">
+        <div class="card text-left">
+          <div class="card-body">
+            <h5 class="text-center"> Covid-19 News </h5>
+            <div class="row">
+              {% for i in news %}
+              <div class="col-md-4 mt-2">
+                <div class="card">
+                  <img class="card-img-top" src="{{i.img}}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5>{{i.title}}</h4>
+                      <p class="card-text text">{{i.description }}</p>
+                      <br>
+                  </div>
+                  <div class="text-right mr-2 mb-3">
+                    <a href="{{ i.link }}" class="text-left btn btn-outline-primary btn-lg">Read more</a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

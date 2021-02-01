@@ -1,0 +1,26 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Weather Report</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <div class="jumbotron text-center">
+        <h1>Current Weather</h1>
+        <form>
+            <div class="form-group">
+                <input type="text" name="city" placeholder="Weather search">
+                <input type="submit" value="Submit" class="btn btn-primary" >
+            </div>
+        </form>
+        <h1>City: <b>{{weather.city}}, {{weather.country}}</b></h1>
+        <h1>{{weather.description}} |{{weather.temperature}}&#8451</h1>
+    </div>
+</body>
+
+</html>

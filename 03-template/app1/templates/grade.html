@@ -1,0 +1,23 @@
+<html>
+
+<body>
+   {% if marks => 50 and marks <= 55 %}
+   <h1>Grade : D</h1>
+   {% elif marks > 55 and marks <= 60 %}
+   <h1>Grade : D+</h1>
+   {% elif marks > 60 and marks <= 65 %}
+   <h1>Grade : C</h1>
+   {% elif marks > 65 and marks <= 70 %}
+   <h1>Grade : C+</h1>
+   {% elif marks > 60 and marks <= 75 %}
+   <h1>Grade : B</h1>
+   {% elif marks > 75 and marks < 80 %}
+   <h1>Grade : B+</h1>
+   {% elif marks => 80 %}
+   <h1>Grade : A</h1>
+   {% else %}
+   <h1>Grade : E</h1>
+   {% endif %}
+</body>
+
+</html>

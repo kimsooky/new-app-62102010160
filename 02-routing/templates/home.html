@@ -1,0 +1,21 @@
+<html>
+    <head>     
+    </head>
+    <body>
+        <h1>Coming soon to Apple Music</h1>
+        <table style="width:100%">
+            <tr>
+              <th>Title</th>
+              <th>Description</th> 
+              <th>Link</th>
+            </tr>
+            {% for item in items %}
+              <td>{{item.title}}</td>
+              <td>{{item.description}}</td>
+              <td><a href={{item.link}}>{{item.link}}</a></td>
+            </tr>
+            {% endfor %}
+          </table>
+    </body>
+</html>
+

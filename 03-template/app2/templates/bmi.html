@@ -1,0 +1,62 @@
+<!doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<h1>BMI App</h1>
+
+<body>
+    <form method="POST" action="/">
+        <label for="weight">Weight:</label><br>
+        <input type="text" name="weight"><br>
+        <label for="height">Height:</label><br>
+        <input type="text" name="height"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    {% if bmi %}
+    <p>
+        {% print("Your BMI is {}.".format(bmi)) %}
+        <!--python-->
+        <p>
+            {% print("{}.".format(bmi_cal)) %}      
+        </p> 
+        <!-- HTML
+            {% if bmi < 15  %}
+            <p> 
+                {% print("Very severely underweight")%}
+            </p>
+            {% elif bmi >= 15 and bmi < 16  %}
+            <p> 
+                {% print("Severely underweight")%}
+            </p>
+            {% elif bmi >= 16 and bmi < 18.5  %}
+            <p> 
+                {% print("Underweight")%}
+            </p>
+            {% elif bmi >= 18.5 and bmi < 25  %}
+            <p> 
+                {% print("Normal (healthy weight)")%}
+            </p>
+            {% elif bmi >= 25 and bmi < 30  %}
+            <p> 
+                {% print("Overweight")%}
+            </p>
+            {% elif bmi >= 30 and bmi < 35  %}
+            <p> 
+                {% print("Moderately obese")%}
+            </p>
+            {% elif bmi >= 35 and bmi < 40  %}
+            <p> 
+                {% print("Severely obese")%}
+            </p>
+            {% else %}
+            <p> 
+                {% print("Very severely obese")%}
+            </p>
+            
+            {% endif %}  -->
+    </p>
+    {% endif %}
+</body>
