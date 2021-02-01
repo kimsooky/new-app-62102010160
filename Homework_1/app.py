@@ -9,11 +9,11 @@ app = Flask(__name__)
 
 OPEN_WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?q={0}&units=metric&APPID={1}"
 
-OPEN_WEATHER_KEY = '99b45c40d36d608ad54c3b7ffa1c11aa'
+OPEN_WEATHER_KEY = '512d2300ee2039f4c92c7eeb02627f79'
 
 NEWS_URL = "http://newsapi.org/v2/everything?q={0}&from=2021-1-30&sortBy=publishedAt&apiKey={1}"
 
-NEWS_KEY = "524f6394cc7744d4bba39ecbd765c268"
+NEWS_KEY = "a89bc480d102474eac4b543412296a1c"
 
 #COVID_API_TH
 url = requests.get('https://covid19.th-stat.com/api/open/today')
@@ -43,7 +43,7 @@ def home():
     return render_template("home.html", weather=weather,result=result,news=news)
 
 def CovidNews(): #ดึงข่าว
-    url = "http://newsapi.org/v2/everything?q=covid&from=2021-01-01&sortBy=publishedAt&apiKey=524f6394cc7744d4bba39ecbd765c268"
+    url = "http://newsapi.org/v2/everything?q=covid&from=2021-01-01&sortBy=publishedAt&apiKey=a89bc480d102474eac4b543412296a1c"
     data = urlopen(url).read()
     parsed = json.loads(data)
     news = []
